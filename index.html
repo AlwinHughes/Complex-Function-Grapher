@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Complex graph</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body>
+	<center><h1>Complex graph</h1></center>
+	<div id="input_form">
+		<center>
+			<table id="input_table">
+				<tbody >
+					<tr>
+						<th><center>\(f(x)\)</center></th>
+						<th  colspan="4"><center>Range</center></th>
+						<th>X Resolution</th>
+						<th colspan="3" >Varible A </th>
+					</tr>
+					<tr>
+						<td><input type="text" id="f(x)"></td>
+						<td colspan="2"><center>\(Re(x)\) range</center></td>
+						<td colspan="2"><center>\(Im(x)\) range</center></td>
+	    				<td><input type	="number" id="resolution"></td>
+	    				<td colspan="2"><center>Range</center></td>
+	    				<td><center>Resolution</center></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="number" id="re_low"></td>
+						<td><input type="number" id="re_high"></td>
+						<td><input type="number" id="im_low"></td>
+						<td><input type="number" id="im_high"></td>
+						<td></td>
+						<td><input type="number" id="a_low"></td>
+						<td><input type="number" id="a_high"></td>
+						<td><input type="number" id="a_res"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<center>X form</center>
+			Cartesian<input type="radio" id="radio_x_cartesian" name="x_form" checked="checked" onclick="switchXToCartesian()">
+			Modulus argument <input type="radio" id="raiio_x_mod_arg" name="x_form" onclick="switchXToModArg()">
+			<center><p id="x_desc">\(x\) axis contains \(Re(x)\) component, \(y\) axis conatins \(Im(x)\) component</p></center>
+			<br>
+			<br>
+
+			<center>Y form: </center>
+			Cartesian<input type="radio" id="radio_y_cartesian" name="form" checked="checked" onclick="switchYToCartesian()"> 
+			Modulous argument <input type="radio" id="radio_Y_mod_arg" name="form" onclick="switchYToModArg()"> 
+			<br>
+			<br>
+		</center>
+		<center><button onclick="calculate()">Draw Graph</button></center>
+		
+	</div>
+	<div id="re_side">
+		<center><h1 id="re_title">Real</h1></center>
+		<center><p id="re_desc">\(z\) axis contains \(Re(y)\) </p> </center>
+		<center><div id="re_graph" ></div></center>
+	</div>
+	<div id="im_side">
+		<center><h1 id="im_title">Imaginary</h1></center>
+		<center><p id="im_desc">\(z\) axis contains \(Im(y)\) </p></center>
+		<center><div id="im_graph"></div></center>
+	</div>
+	
+	<script type="text/javascript" src="graph.js"></script>
+</body>
+</html>
