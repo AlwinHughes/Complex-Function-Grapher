@@ -43,16 +43,31 @@
 			</table>
 			<br>
 			<br>
-			<center>X form</center>
-			Cartesian<input type="radio" id="radio_x_cartesian" name="x_form" checked="checked" onclick="switchXToCartesian()">
-			Modulus argument <input type="radio" id="raiio_x_mod_arg" name="x_form" onclick="switchXToModArg()">
-			<center><p id="x_desc">\(x\) axis contains \(Re(x)\) component, \(y\) axis conatins \(Im(x)\) component</p></center>
-			<br>
-			<br>
-
-			<center>Y form: </center>
-			Cartesian<input type="radio" id="radio_y_cartesian" name="form" checked="checked" onclick="switchYToCartesian()"> 
-			Modulous argument <input type="radio" id="radio_Y_mod_arg" name="form" onclick="switchYToModArg()"> 
+			<div id="settings">
+			Show X-Y Grid <input type="checkbox" id="grid" checked="checked">
+			Show Surface Grid <input type="checkbox" id="surface_grid" checked="checked">
+			Show perspective <input type="checkbox" id="perspective">
+			Keep Aspect Ratio <input type="checkbox" id="ratio" checked="checked">
+			Display type <select id="display_type">
+				<option value="surface">Surface</option>
+				<option value="dot">Points</option>
+				<option value="line">Line</option>
+				<option value="grid">Grid</option>
+			</select>
+			</div>
+			<div id="x_options">
+				<center><h3>X form</h3></center>
+				Cartesian<input type="radio" id="radio_x_cartesian" name="x_form" checked="checked" onclick="switchXToCartesian()">
+				Modulus argument <input type="radio" id="raiio_x_mod_arg" name="x_form" onclick="switchXToModArg()">
+				<center><p id="x_desc">\(x\) axis contains \(Re(x)\) component, \(y\) axis conatins \(Im(x)\) component</p></center>
+			</div>
+			
+			<div id="y_options">
+				<center><h3>Y form</h3></center>
+				Cartesian<input type="radio" id="radio_y_cartesian" name="form" checked="checked" onclick="switchYToCartesian()"> 
+				Modulous argument <input type="radio" id="radio_Y_mod_arg" name="form" onclick="switchYToModArg()"> 
+			</div>
+			
 			<br>
 			<br>
 		</center>

@@ -20,7 +20,6 @@ var vari_A;
 var vari_A_range = Array(2);
 var vari_A_res;
 var vari_A_step;
-console.log(math.eval("3^-(1/2)"));
 
 var xval;
 var yval;
@@ -28,6 +27,8 @@ var yval;
 var id;
 function calculate () {
   console.log("calculate");
+  console.log("grid "+document.getElementById("grid").checked);
+  console.log("perspect "+document.getElementById("perspective").checked);
 
   id = 0;
   re_range[0] = parseFloat(document.getElementById("re_low").value);
@@ -149,20 +150,21 @@ function drawGraph(data,graph){
     }
   }
   console.log(use_x_cartesian);
-  var graph3d = new vis.Graph3d(document.getElementById(graph), data, {
+  var options = {
       width:  '500px',
       height: '552px',
-      style: 'dot',
-      showPerspective: true,
-      showGrid: true,
-      showShadow: false,
-      keepAspectRatio: true,
+      style: document.getElementById("display_type").options[document.getElementById("display_type").selectedIndex].value,
+      showPerspective: document.getElementById("perspective").checked,
+      showGrid: document.getElementById("grid").checked,
+      showShadow: !document.getElementById("surface_grid").checked,
+      keepAspectRatio: !document.getElementById("ratio").checked,
       verticalRatio: 0.5,
       xLabel: use_x_cartesian ? "Re(x)" : "|x|",
       yLabel: use_x_cartesian ? "Im(x)" : "arg(x)",
       zLabel: zLabel
     }
-  );
+
+  var graph3d = new vis.Graph3d(document.getElementById(graph), data, options);
 }
 
 function switchYToCartesian() {
