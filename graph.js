@@ -77,13 +77,14 @@ function calculate () {
       
       number = math.eval( f_of_x.replace(/x/g,"("+(re_range[0] + i*re_step )+ ((im_range[0] + j*im_step) != 0 ? "+" +(im_range[0] + j*im_step)+"i": "" ) + ")"));
       
-      if(math.equal(number,1e309)){//checking for infinity as evaluating close number
+      if(math.equal(number.re,1e309)||math.equal(number.im,1e309)||isNaN(number.im)||isNaN(number.re)) {//checking for infinity as evaluating close number
+        console.log(number+" (infinity)");
         number = math.eval(f_of_x.replace(/x/g,"("+(re_range[0] + i*re_step + re_step/100 )+ ((im_range[0] + j*im_step) != 0 ? "+" +(im_range[0] + j*im_step +im_step/100)+"i": "" ) + ")"))
       }
       if(math.typeof(number) != 'Complex'){
         number = math.complex(number,0);
       }
-
+      // console.log(number);
       
       xval = (re_range[0] + i*re_step);
       yval = (im_range[0] + j*im_step);
@@ -127,7 +128,7 @@ function calculate () {
       id++;
     }    
   }
-  console.log(re_data);
+  // console.log(re_data);
   console.log("draw re");
   drawGraph(re_data,"re_graph");
   console.log("draw im");
