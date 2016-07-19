@@ -24,6 +24,9 @@ var vari_A_step;
 var xval;
 var yval;
 
+var minor_change = false;
+var major_change = false;
+
 var id;
 function calculate () {
   console.log("calculate");
@@ -209,4 +212,14 @@ function switchXToModArg() {
     MathJax.Hub.Typeset();
     calculate();
   }
+}
+
+function minor_change() {
+  document.getElementById("draw_button").style.backgroundColor = "#C8FE2E";
+}
+function major_change() {
+  document.getElementById("draw_button").style.backgroundColor = "#FFFF00";
+}
+function function_name (argument) {
+  // body...
 }

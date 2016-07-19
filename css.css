@@ -1,3 +1,7 @@
+body{
+	font-family:Arial;
+	font-size:13px;
+}
 #input_table{
 	border-radius: 8px;
 	border-style: solid;
@@ -30,3 +34,22 @@ input{
 	border-color: green;
 	padding: 10px;	
 }
+
+#draw_button {
+	background-color:#44c767; 
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	padding:10px 10px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.#draw_button:hover {
+	background-color:#5cbf2a;
+}
+#draw_button:active {
+	position:relative;
+	top:1px;
+}
+

@@ -30,10 +30,10 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td><input type="number" id="re_low"></td>
-						<td><input type="number" id="re_high"></td>
-						<td><input type="number" id="im_low"></td>
-						<td><input type="number" id="im_high"></td>
+						<td><input type="number" id="re_low" onblur="major_change()"></td>
+						<td><input type="number" id="re_high" onblur="major_change()"></td>
+						<td><input type="number" id="im_low" onblur="major_change()" ></td>
+						<td><input type="number" id="im_high" onblur="major_change()"></td>
 						<td></td>
 						<!-- <td><input type="number" id="a_low"></td>
 						<td><input type="number" id="a_high"></td>
@@ -44,11 +44,11 @@
 			<br>
 			<br>
 			<div id="settings">
-			Show X-Y Grid <input type="checkbox" id="grid" checked="checked">
-			Show Surface Grid <input type="checkbox" id="surface_grid" checked="checked">
-			Show perspective <input type="checkbox" id="perspective">
-			Keep Aspect Ratio <input type="checkbox" id="ratio" checked="checked">
-			Display type <select id="display_type">
+			Show X-Y Grid <input type="checkbox" id="grid" checked="checked" onblur="minor_change()">
+			Show Surface Grid <input type="checkbox" id="surface_grid" checked="checked" onblur="minor_change()">
+			Show perspective <input type="checkbox" id="perspective" onblur="minor_change()">
+			Keep Aspect Ratio <input type="checkbox" id="ratio" checked="checked" onblur="minor_change()">
+			Display type <select id="display_type" onblur="minor_change()">
 				<option value="surface">Surface</option>
 				<option value="dot">Points</option>
 				<option value="line">Line</option>
@@ -71,7 +71,7 @@
 			<br>
 			<br>
 		</center>
-		<center><button onclick="calculate()">Draw Graph</button></center>
+		<center><button onclick="calculate()" id="draw_button">Draw Graph</button></center>
 		
 	</div>
 	<div id="re_side">
